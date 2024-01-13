@@ -17,6 +17,6 @@ app.use(express.json());
 
 app.use("/api", apiRouter);
 
-app.listen(IOS_API_PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`API lancée sur le port ${PORT}`);
 });
