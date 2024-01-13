@@ -17,6 +17,8 @@ const predefinedCoordinates = [
   { longitude: 6.862601, latitude: 47.638442 },
 ];
 
+faker.locale = "fr";
+
 const generateRandomUserData = () => {
   return {
     firstname: faker.name.firstName(),
@@ -26,9 +28,6 @@ const generateRandomUserData = () => {
 };
 
 const generateRandomPlaceData = () => {
-  // const randomIndex = Math.floor(Math.random() * predefinedCoordinates.length);
-  // const selectedCoordinates = predefinedCoordinates[randomIndex];
-  // I want to create all latitudes and longitudes for 10 places
   const selectedCoordinates = predefinedCoordinates.shift();
   predefinedCoordinates.push(selectedCoordinates);
 
@@ -50,7 +49,7 @@ const insertRandomUserData = async () => {
   try {
     // Générez 10 lieux (places) aléatoires
     const places = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       const placeData = generateRandomPlaceData();
       const place = await Place.create(placeData);
       places.push(place);
@@ -58,14 +57,14 @@ const insertRandomUserData = async () => {
 
     // Générez 10 entreprises (companies) aléatoires
     const companies = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       const companyData = generateRandomCompanyData();
       const company = await Company.create(companyData);
       companies.push(company);
     }
 
     // Générez 100 utilisateurs avec une répartition aléatoire entre les lieux et les entreprises
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 40; i++) {
       const userData = generateRandomUserData();
       const user = await User.create(userData);
 
@@ -86,8 +85,5 @@ const insertRandomUserData = async () => {
     console.error("Erreur lors de la création de l'utilisateur :", error);
   }
 };
-
-// Appel de la fonction pour insérer des données aléatoires
-// insertRandomUserData();
 
 module.exports = insertRandomUserData;
