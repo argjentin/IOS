@@ -11,12 +11,12 @@ app.use(cors());
 
 const { sequelize, User, Place, Company } = require("./models");
 
-const IOS_API_PORT = process.env.IOS_API_PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
 app.use("/api", apiRouter);
 
-app.listen(IOS_API_PORT, () => {
-  console.log(`API lancée sur le port ${IOS_API_PORT}`);
+app.listen(IOS_API_PORT, '0.0.0.0', () => {
+  console.log(`API lancée sur le port ${PORT}`);
 });
