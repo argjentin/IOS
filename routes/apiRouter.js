@@ -23,10 +23,14 @@ router.get("/places", PlaceController.getAll);
 
 router.get("/places/:id", PlaceController.getById);
 
+router.get("/places/:id/users", PlaceController.getAllUserByPlace);
+
 // COMPANIES ROUTES
 
 router.get("/companies", CompanyController.getAll);
 
 router.get("/companies/:id", CompanyController.getById);
+
+router.get("/companies/:id/users", CompanyController.getAllUserByCompany);
 
 module.exports = router;

@@ -20,6 +20,16 @@ class CompanyController {
       res.status(500).json(err);
     }
   }
+
+  // get all users by entreprise
+  static async getAllUserByCompany(req, res) {
+    try {
+      const users = await CompanyService.getAllUserByCompany(req.params.id);
+      res.status(200).json(users);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
 }
 
 module.exports = CompanyController;

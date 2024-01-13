@@ -20,6 +20,15 @@ class PlaceController {
       res.status(500).json(err);
     }
   }
+
+  static async getAllUserByPlace(req, res) {
+    try {
+      const users = await PlaceService.getAllUserByPlace(req.params.id);
+      res.status(200).json(users);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
 }
 
 module.exports = PlaceController;
