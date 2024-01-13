@@ -14,10 +14,10 @@ Company.hasMany(User);
 
 // Synchronisation des modèles avec la base de données
 sequelize
-  .sync({ force: true })
+  .sync()
   .then(() => {
     console.log("Modèles synchronisés avec la base de données !");
-    insertRandomUserData();
+    // insertRandomUserData();
   })
   .catch((error) => {
     console.error("Erreur lors de la synchronisation :", error);
