@@ -21,10 +21,6 @@ const User = sequelize.define(
       type: DataTypes.STRING(50),
       allowNull: false,
     },
-    profile: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-    },
   },
   {
     tableName: "users",
