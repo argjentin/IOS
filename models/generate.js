@@ -24,7 +24,7 @@ const generateRandomUserData = () => {
     firstname: faker.name.firstName(),
     lastname: faker.name.lastName(),
     email: faker.internet.email(),
-    profile: faker.image.avatar(),
+    profile: faker.image.urlLoremFlickr({ category: 'people' }),
   };
 };
 
