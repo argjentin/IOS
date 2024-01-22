@@ -50,7 +50,7 @@ const insertRandomUserData = async () => {
   try {
     // Générez 10 lieux (places) aléatoires
     const places = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
       const placeData = generateRandomPlaceData();
       const place = await Place.create(placeData);
       places.push(place);
@@ -58,14 +58,14 @@ const insertRandomUserData = async () => {
 
     // Générez 10 entreprises (companies) aléatoires
     const companies = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
       const companyData = generateRandomCompanyData();
       const company = await Company.create(companyData);
       companies.push(company);
     }
 
     // Générez 100 utilisateurs avec une répartition aléatoire entre les lieux et les entreprises
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 100; i++) {
       const userData = generateRandomUserData();
       const user = await User.create(userData);
 
