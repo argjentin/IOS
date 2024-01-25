@@ -25,6 +25,8 @@ router.get("/places/:id", PlaceController.getById);
 
 router.get("/places/:id/users", PlaceController.getAllUserByPlace);
 
+router.post("/places", PlaceController.create);
+
 // COMPANIES ROUTES
 
 router.get("/companies", CompanyController.getAll);
