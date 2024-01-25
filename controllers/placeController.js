@@ -21,6 +21,17 @@ class PlaceController {
     }
   }
 
+    // create
+  static async create(req, res) {
+    try {
+      const entreprise = await PlaceService.create(req.body);
+      res.status(201).json(entreprise);
+      console.log(entreprise);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
+
   static async getAllUserByPlace(req, res) {
     try {
       const users = await PlaceService.getAllUserByPlace(req.params.id);
