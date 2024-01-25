@@ -25,6 +25,11 @@ const Place = sequelize.define(
       type: DataTypes.FLOAT,
       allowNull: false,
     },
+    isNull: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false,
+    },
   },
 
   {
