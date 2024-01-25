@@ -24,16 +24,25 @@ class UserService {
     });
   }
 
-  // toggle place
   static async togglePlace(id, placeId) {
     const user = await User.findByPk(id);
     const place = await Place.findByPk(placeId);
 
-    if (!user || !place) {
-      throw new Error("User or place not found");
+    if (!user) {
+      throw new Error("User not found");
     }
 
-    await user.setPlace(place);
+    if (placeId === "0") {
+      // Pour supprimer la relation (définir la place de l'utilisateur sur null)
+      await user.setPlace(null);
+    } else if (place) {
+      // Pour établir la relation avec un emplacement existant
+      await user.setPlace(place);
+    } else {
+      throw new Error("Place not found");
+    }
+
+    return user;
   }
 }
 
