@@ -1,9 +1,6 @@
 routes : 
 
-https://ios-production-608b.up.railway.app/api/
 https://ios-production-608b.up.railway.app/api/users
-https://ios-production-608b.up.railway.app/api/places
-https://ios-production-608b.up.railway.app/api/companies
 
 // USER ROUTES
 
